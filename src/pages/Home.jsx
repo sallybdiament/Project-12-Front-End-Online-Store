@@ -1,5 +1,5 @@
 import React from 'react';
-import BotaoCarrinho from '../Components/BotaoCarrinho';
+import BotaoCarrinho from '../components/BotaoCarrinho';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 
