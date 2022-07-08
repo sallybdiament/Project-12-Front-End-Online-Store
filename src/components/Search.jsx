@@ -15,7 +15,7 @@ class Search extends React.Component {
 
   handleClick = async () => {
     const { search } = this.state;
-    const objeto = await getProductsFromCategoryAndQuery(search);
+    const objeto = await getProductsFromCategoryAndQuery(null, search);
     const produtos = objeto.results;
     this.setState({ produtos });
   }
@@ -48,6 +48,7 @@ class Search extends React.Component {
               nome={ produto.title }
               imagem={ produto.thumbnail }
               preco={ produto.price }
+              produtoId={ produto.id }
             />
           </div>
         ))}

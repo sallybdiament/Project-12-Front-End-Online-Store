@@ -38,6 +38,7 @@ class ItemCategory extends React.Component {
               nome={ produto.title }
               imagem={ produto.thumbnail }
               preco={ produto.price }
+              produtoId={ produto.id }
             />
           </div>
         ))}
