@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCategories } from '../../services/api';
+import { getCategories } from '../services/api';
 import ItemCategory from './ItemCategory';
 
 class Categories extends React.Component {
