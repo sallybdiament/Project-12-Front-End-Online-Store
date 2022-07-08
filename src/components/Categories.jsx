@@ -30,6 +30,7 @@ class Categories extends React.Component {
               <ItemCategory
                 key={ category.key }
                 name={ category.name }
+                categoryId={ category.id }
               />
             ))}
           </ul>

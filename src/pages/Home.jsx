@@ -7,8 +7,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <p>Categorias:</p>
-        <Categories />
         <p
           data-testid="home-initial-message"
         >
@@ -16,6 +14,8 @@ class Home extends React.Component {
         </p>
         <BotaoCarrinho />
         <Search />
+        <p>Categorias:</p>
+        <Categories />
       </div>
     );
   }
