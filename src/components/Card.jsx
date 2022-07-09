@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
-  // handleClick = (event) => {
-  //   console.log(event);
-  // }
+  state = {
+    productsId: '',
+  }
+
+  handleClick = () => {
+    const { produtoId } = this.props;
+    this.setState({ productsId: produtoId });
+  }
 
   render() {
     const { nome, imagem, preco, produtoId } = this.props;
@@ -19,15 +24,15 @@ class Card extends React.Component {
           <img src={ imagem } alt={ nome } />
           <p>{ preco }</p>
         </Link>
-        {/* <Link to="/CarrinhoDeCompras">
+        <Link to={ `/CarrinhoDeCompras/${produtoId}` }>
           <button
             type="submit"
-            // onClick={ this.handleClick }
             data-testid="product-add-to-cart"
+            onClick={ this.handleClick }
           >
             Adicionar ao carrinho
           </button>
-        </Link> */}
+        </Link>
       </div>
     );
   }
