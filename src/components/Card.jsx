@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import createUser from '../services/localStorage';
 
 class Card extends React.Component {
-  state = {
-    productsId: '',
-  }
-
-  handleClick = () => {
-    const { produtoId } = this.props;
-    this.setState({ productsId: produtoId });
+  handleClick = async () => {
+    const { produtoId, nome, preco } = this.props;
+    await createUser({
+      titleProduct: nome,
+      priceProduct: preco,
+      quantityProduct: 1,
+      productId: produtoId });
+    console.log('clicou');
   }
 
   render() {

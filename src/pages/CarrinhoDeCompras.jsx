@@ -1,24 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { getProductsFromProductId } from '../services/api';
+// import PropTypes from 'prop-types';
+// import { getProductsFromProductId } from '../services/api';
 
 class CarrinhoDeCompras extends React.Component {
   state = {
     titleProduct: '',
     priceProduct: '',
     imgProduct: '',
-  }
-
-  componentDidMount = async () => {
-    const { match } = this.props;
-    const productId = match.params.id;
-    const product = await getProductsFromProductId(productId);
-    // console.log(product);
-    this.setState({
-      titleProduct: product.title,
-      priceProduct: product.price,
-      imgProduct: product.thumbnail,
-    });
   }
 
   render() {
@@ -33,9 +21,5 @@ class CarrinhoDeCompras extends React.Component {
     );
   }
 }
-
-CarrinhoDeCompras.propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
-};
 
 export default CarrinhoDeCompras;
