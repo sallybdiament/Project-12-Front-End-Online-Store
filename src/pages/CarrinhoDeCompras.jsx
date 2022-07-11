@@ -33,8 +33,6 @@ class CarrinhoDeCompras extends React.Component {
     console.log(localStorage.getItem('user'));
     return (
       <div>
-        {/* {quantityProduct.length === 0 */}
-        {/* && <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>} */}
         <p data-testid="shopping-cart-empty-message">
           Seu carrinho está vazio
         </p>
@@ -45,9 +43,11 @@ class CarrinhoDeCompras extends React.Component {
             <p>{priceProduct}</p>
             <p data-testid="shopping-cart-product-quantity">{quantityProduct}</p>
           </div>)} */}
-        <p data-testid="shopping-cart-product-name">{titleProduct}</p>
-        <p>{priceProduct}</p>
-        <p data-testid="shopping-cart-product-quantity">{quantityProduct}</p>
+        <div key={ idProduct }>
+          <p data-testid="shopping-cart-product-name">{titleProduct}</p>
+          <p>{priceProduct}</p>
+          <p data-testid="shopping-cart-product-quantity">{quantityProduct}</p>
+        </div>
 
       </div>
     );
