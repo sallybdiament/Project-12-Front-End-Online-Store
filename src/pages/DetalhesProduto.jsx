@@ -13,6 +13,7 @@ class DetalhesProduto extends React.Component {
 
   componentDidMount = async () => {
     const { match } = this.props;
+    console.log(match);
     const productId = match.params.id;
     const product = await getProductsFromProductId(productId);
     console.log(product);
