@@ -7,7 +7,6 @@ class Card extends React.Component {
   handleClick = () => {
     const { produtoId, preco } = this.props;
     const { nome } = this.props;
-    // localStorage.setItem('nome', nome);
     createUser({
       titleProduct: nome,
       priceProduct: preco,
