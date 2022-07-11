@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import createUser from '../services/localStorage';
+import createUser from '../services/localStorage';
 
 class Card extends React.Component {
   handleClick = () => {
-    // const { produtoId, preco} = this.props;
+    const { produtoId, preco } = this.props;
     const { nome } = this.props;
-    localStorage.setItem('nome', nome);
-    // createUser({
-    //   titleProduct: nome,
-    //   priceProduct: preco,
-    //   quantityProduct: 1,
-    //   productId: produtoId });
+    // localStorage.setItem('nome', nome);
+    createUser({
+      titleProduct: nome,
+      priceProduct: preco,
+      quantityProduct: 1,
+      productId: produtoId });
     console.log('clicou');
   }
 
@@ -28,15 +28,16 @@ class Card extends React.Component {
           <img src={ imagem } alt={ nome } />
           <p>{ preco }</p>
         </Link>
-        <Link to={ `/CarrinhoDeCompras/${produtoId}` }>
-          <button
-            type="submit"
-            data-testid="product-add-to-cart"
-            onClick={ this.handleClick }
-          >
-            Adicionar ao carrinho
-          </button>
-        </Link>
+        {/* <Link to={ `/CarrinhoDeCompras/${produtoId}` }> */}
+        <button
+          type="button"
+          data-testid="product-add-to-cart"
+          // data-testid="shopping-cart-button"
+          onClick={ this.handleClick }
+        >
+          Adicionar ao carrinho
+        </button>
+        {/* </Link> */}
       </div>
     );
   }
