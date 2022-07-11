@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   handleClick = () => {
-    // const { produtoId, nome, preco } = this.props;
+    const { produtoId, nome, preco } = this.props;
     localStorage.setItem('nome', nome);
     // createUser({
     //   titleProduct: nome,
