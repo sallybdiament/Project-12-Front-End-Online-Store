@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 // import { getProductsFromProductId } from '../services/api';
 
@@ -86,6 +87,7 @@ class CarrinhoDeCompras extends React.Component {
             -
           </button>
         </div>
+        <Link to="/Checkout" data-testid="checkout-products">Checkout</Link>
       </div>
     );
   }
