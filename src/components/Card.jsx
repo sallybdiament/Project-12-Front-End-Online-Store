@@ -16,7 +16,8 @@ class Card extends React.Component {
   }
 
   render() {
-    const { nome, imagem, preco, produtoId } = this.props;
+    const { nome, imagem, preco, produtoId, freteGratis } = this.props;
+    console.log(freteGratis);
     return (
       <div data-testid="product">
         <Link
@@ -25,6 +26,7 @@ class Card extends React.Component {
         >
           <p>{nome}</p>
           <img src={ imagem } alt={ nome } />
+          { freteGratis && <p data-testid="free-shipping">Frete Grátis</p>}
           <p>{ preco }</p>
         </Link>
         {/* <Link to={ `/CarrinhoDeCompras/${produtoId}` }> */}
