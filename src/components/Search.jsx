@@ -22,6 +22,7 @@ class Search extends React.Component {
 
   render() {
     const { search, produtos } = this.state;
+    // console.log(produtos);
     return (
       <div>
         <label htmlFor="search">
@@ -49,6 +50,7 @@ class Search extends React.Component {
               imagem={ produto.thumbnail }
               preco={ produto.price }
               produtoId={ produto.id }
+              freteGratis={ produto.shipping.free_shipping }
             />
           </div>
         ))}

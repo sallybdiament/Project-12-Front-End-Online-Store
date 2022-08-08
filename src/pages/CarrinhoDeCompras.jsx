@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 // import { getProductsFromProductId } from '../services/api';
 
@@ -28,6 +29,18 @@ class CarrinhoDeCompras extends React.Component {
     }
   }
 
+  handleClickAument = () => {
+    this.setState((state) => ({ quantityProduct: state.quantityProduct + 1 }));
+  }
+
+  handleClickDiminui = () => {
+    const { quantityProduct } = this.state;
+    const min = 1;
+    if (quantityProduct > min) {
+      this.setState((state) => ({ quantityProduct: state.quantityProduct - 1 }));
+    }
+  }
+
   render() {
     const { titleProduct, priceProduct, quantityProduct, idProduct } = this.state;
     console.log(localStorage.getItem('user'));
@@ -48,7 +61,33 @@ class CarrinhoDeCompras extends React.Component {
           <p>{priceProduct}</p>
           <p data-testid="shopping-cart-product-quantity">{quantityProduct}</p>
         </div>
-
+        <div>
+          <label htmlFor="product-increase-quantity">
+            <input
+              id="search"
+              name="search"
+              type="number"
+              value={ quantityProduct }
+              min="1"
+              data-testid="product-increase-quantity"
+            />
+          </label>
+          <button
+            type="button"
+            data-testid="product-increase-quantity"
+            onClick={ this.handleClickAument }
+          >
+            +
+          </button>
+          <button
+            type="button"
+            data-testid="product-increase-quantity"
+            onClick={ this.handleClickDiminui }
+          >
+            -
+          </button>
+        </div>
+        <Link to="/Checkout" data-testid="checkout-products">Checkout</Link>
       </div>
     );
   }
